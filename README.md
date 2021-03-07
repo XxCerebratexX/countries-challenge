@@ -28,7 +28,6 @@ The BE of the application, here is the main endpoints as well the chained calls 
 - "webpack",
 - "webpack-cli",
 - "mini-css-extract-plugin"
-- "workbox-webpack-plugin"
 - "optimize-css-assets-webpack-plugin"
 - "terser-webpack-plugin"
     
