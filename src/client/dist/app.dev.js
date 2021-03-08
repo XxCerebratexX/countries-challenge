@@ -15,6 +15,12 @@ Object.defineProperty(exports, "getCountryInfo", {
     return _apiController.getCountryInfo;
   }
 });
+Object.defineProperty(exports, "createCard", {
+  enumerable: true,
+  get: function get() {
+    return _apiController.createCard;
+  }
+});
 
 require("./styles/style.scss");
 
@@ -72,8 +78,9 @@ document.addEventListener('DOMContentLoaded', function () {
             case 2:
               info = _context.sent;
               console.log(info);
+              (0, _apiController.createCard)(info.response);
 
-            case 4:
+            case 5:
             case "end":
               return _context.stop();
           }

@@ -3,6 +3,7 @@ import "./styles/style.scss";
 import {
     getCountriesList,
     getCountryInfo,
+    createCard,
     countries
 } from "./js/apiController"
 document.addEventListener('DOMContentLoaded', () => {
@@ -49,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('submit-search').addEventListener('click', async(e) => {
             let info = await getCountryInfo(searchBar.value);
             console.log(info);
+            createCard(info.response);
         })
 
     }
@@ -75,5 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 export {
     getCountriesList,
-    getCountryInfo
+    getCountryInfo,
+    createCard
 }

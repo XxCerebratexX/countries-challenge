@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getCountriesList = getCountriesList;
 exports.getCountryInfo = getCountryInfo;
+exports.createCard = createCard;
 exports.countries = void 0;
 
 var _nodeFetch = _interopRequireDefault(require("node-fetch"));
@@ -88,6 +89,41 @@ function getCountryInfo(value) {
           return _context2.stop();
       }
     }
+  });
+}
+
+function createCard(array) {
+  array.forEach(function (el) {
+    console.log(el);
+    var DOMObject = document.createElement('div');
+    DOMObject.setAttribute('class', 'country-card');
+    var heading = document.createElement('h2');
+    heading.innerText = el.name;
+    DOMObject.appendChild(heading);
+    var info = document.createElement('div');
+    info.setAttribute('class', 'country-info');
+    var region = document.createElement('div');
+    region.setAttribute('class', 'region');
+    region.innerHTML = "<div class=\"region\"><span>Region: ".concat(el.region, "</span></div>");
+    var population = document.createElement('div');
+    population.setAttribute('class', 'population');
+    population.innerHTML = "<div class=\"population\"><span>Population: ".concat(el.population, "</span></div>");
+    var currencies = document.createElement('ul');
+    currencies.setAttribute('class', 'currency');
+    currencies.innerHTML = el.currencies.map(function (currency) {
+      return " Currency(ies)\n                <li>Symbol: ".concat(currency.symbol, "</li> \n                <li>Code: ").concat(currency.code, " </li> \n                <li>Name: ").concat(currency.name, " </li>");
+    });
+    var languages = document.createElement('ul');
+    languages.setAttribute('class', 'language');
+    languages.innerHTML = "Language(s): ".concat(el.languages.map(function (language) {
+      return "<li> ".concat(language.nativeName, " </li>");
+    }));
+    info.appendChild(region);
+    info.appendChild(currencies);
+    info.appendChild(languages);
+    info.appendChild(population);
+    DOMObject.appendChild(info);
+    document.getElementById('main-body').appendChild(DOMObject);
   });
 }
 //# sourceMappingURL=apiController.dev.js.map

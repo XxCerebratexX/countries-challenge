@@ -1,7 +1,8 @@
 //This helps me debug style and see the boxes
-* {
+
+/* * {
     border: 1px solid black;
-}
+} */
 
 body {
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
@@ -136,8 +137,9 @@ body {
         .main-body {
             min-height: 40vh;
             grid-auto-columns: minmax(20vh, auto);
-            grid-template-columns: 35% auto;
+            grid-template-columns: auto auto;
             column-gap: 2em;
+            row-gap: 2em;
         }
     }
     @media only screen and (max-device-width:799px) {
