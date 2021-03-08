@@ -26,4 +26,20 @@ async function getCountriesList() {
 
     countries = restCall.response;
 }
-export { countries, getCountriesList}
+
+async function getCountryInfo(value) {
+
+    let restCall = await fetch(`http://localhost:8003/getCountriesbyName?name=${value}`, headers)
+        .then(response => {
+            if (!response.ok) {
+                throw response;
+            } else {
+                return response;
+            }
+        }).then(res => res.json())
+        .then(resp => resp)
+        .catch(err => err.json()).then(error => error);
+    return restCall;
+
+}
+export { countries, getCountriesList, getCountryInfo }
