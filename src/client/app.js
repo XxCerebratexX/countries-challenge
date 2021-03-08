@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function searchCountry() {
         document.getElementById('submit-search').addEventListener('click', async(e) => {
+            document.getElementById('main-body').innerHTML = ''
             let info = await getCountryInfo(searchBar.value);
             console.log(info);
             createCard(info.response);

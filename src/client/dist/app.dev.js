@@ -72,15 +72,16 @@ document.addEventListener('DOMContentLoaded', function () {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
+              document.getElementById('main-body').innerHTML = '';
+              _context.next = 3;
               return regeneratorRuntime.awrap((0, _apiController.getCountryInfo)(searchBar.value));
 
-            case 2:
+            case 3:
               info = _context.sent;
               console.log(info);
               (0, _apiController.createCard)(info.response);
 
-            case 5:
+            case 6:
             case "end":
               return _context.stop();
           }
