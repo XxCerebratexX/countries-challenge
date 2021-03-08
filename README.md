@@ -15,6 +15,8 @@ This applications allows the user to search for a country and get a card(s) with
 Here is the main brain of the app functionality, here is located the main calls to the BE functions.
 
 ### server.js
+It's necessary to start it so the endpoints work, for run it, in root folder goes with this command
+` npm run start `
 The BE of the application, here is the main endpoints as well the chained calls in between to get the necessary data.
 
 
